@@ -1,3 +1,4 @@
+
 import numpy as np
 import random
 
@@ -23,10 +24,10 @@ class Neural_Network(object):
 
     def forward(self, Input):
 
-        self.z2 = np.dot(Input, self.weight1)
-        self.a2 = self.activationFunction(self.z2)
-        self.z3 = np.dot(self.a2, self.weight2)
-        Result = self.activationFunction(self.z3)
+        self.matrix1 = np.dot(Input, self.weight1)
+        self.activation1 = self.activationFunction(self.matrix1)
+        self.matrix2 = np.dot(self.activation1, self.weight2)
+        Result = self.activationFunction(self.matrix2)
         return Result
 
     def sigmoid(self, z):
